@@ -28,6 +28,46 @@
 			"response": []
 		},
 		{
+			"name": "author ASC, title DESC",
+			"request": {
+				"url": "http://localhost:8888/books",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\t\t\"books\":[\n\t\t\t\t{\n\t\t\t\t\t\"id\": 1,\n\t\t\t\t\t\"title\": \"Java How to Program\",\n\t\t\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\t\t\"year\": \"2007\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 2,\n\t\t\t\t\t\"title\": \"Patterns of Enterprise Application Archtecture\",\n\t\t\t\t\t\"author\": \"Martin Fowler\",\n\t\t\t\t\t\"year\": \"2002\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 3,\n\t\t\t\t\t\"title\": \"Head First Deseign Patterns\",\n\t\t\t\t\t\"author\": \"Elisabeth Freeman\",\n\t\t\t\t\t\"year\": \"2004\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 4,\n\t\t\t\t\t\"title\": \"Internet & World Wide Web: How to Program\",\n\t\t\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\t\t\"year\": \"2007\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"sort\": [\n\t\t\t\t{\n\t\t\t\t\t\"rule\": \"author\",\n\t\t\t\t\t\"direction\": \"ASC\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"rule\": \"title\",\n\t\t\t\t\t\"direction\": \"DESC\"\n\t\t\t\t}\n\t\t\t]\n\t\t}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "year DESC, author DESC, title ASC",
+			"request": {
+				"url": "http://localhost:8888/books",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"books\":[\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"title\": \"Java How to Program\",\n\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\"year\": \"2007\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 2,\n\t\t\t\"title\": \"Patterns of Enterprise Application Archtecture\",\n\t\t\t\"author\": \"Martin Fowler\",\n\t\t\t\"year\": \"2002\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"title\": \"Head First Deseign Patterns\",\n\t\t\t\"author\": \"Elisabeth Freeman\",\n\t\t\t\"year\": \"2004\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"title\": \"Internet & World Wide Web: How to Program\",\n\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\"year\": \"2007\"\n\t\t}\n\t],\n\t\"sort\": [\n\t\t{\n\t\t\t\"rule\": \"year\",\n\t\t\t\"direction\": \"DESC\"\n\t\t},\n\t\t{\n\t\t\t\"rule\": \"author\",\n\t\t\t\"direction\": \"DESC\"\n\t\t},\n\t\t{\n\t\t\t\"rule\": \"title\",\n\t\t\t\"direction\": \"ASC\"\n\t\t}\n\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "title DESC",
 			"request": {
 				"url": "http://localhost:8888/books",
@@ -62,46 +102,6 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{ \n\t\"books\":[\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"title\": \"Java How to Program\",\n\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\"year\": \"2007\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 2,\n\t\t\t\"title\": \"Patterns of Enterprise Application Archtecture\",\n\t\t\t\"author\": \"Martin Fowler\",\n\t\t\t\"year\": \"2002\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"title\": \"Head First Deseign Patterns\",\n\t\t\t\"author\": \"Elisabeth Freeman\",\n\t\t\t\"year\": \"2004\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"title\": \"Internet & World Wide Web: How to Program\",\n\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\"year\": \"2007\"\n\t\t}\n\t],\n\t\"sort\": [\n\t\t{\n\t\t\t\"rule\": \"year\",\n\t\t\t\"direction\": \"ASC\"\n\t\t}\n\t]\n}"
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "year DESC",
-			"request": {
-				"url": "http://localhost:8888/books",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{ \n\t\"books\":[\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"title\": \"Java How to Program\",\n\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\"year\": \"2007\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 2,\n\t\t\t\"title\": \"Patterns of Enterprise Application Archtecture\",\n\t\t\t\"author\": \"Martin Fowler\",\n\t\t\t\"year\": \"2002\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"title\": \"Head First Deseign Patterns\",\n\t\t\t\"author\": \"Elisabeth Freeman\",\n\t\t\t\"year\": \"2004\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"title\": \"Internet & World Wide Web: How to Program\",\n\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\"year\": \"2007\"\n\t\t}\n\t],\n\t\"sort\": [\n\t\t{\n\t\t\t\"rule\": \"year\",\n\t\t\t\"direction\": \"DESC\"\n\t\t}\n\t]\n}"
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "author ASC",
-			"request": {
-				"url": "http://localhost:8888/books",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{ \n\t\"books\":[\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"title\": \"Java How to Program\",\n\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\"year\": \"2007\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 2,\n\t\t\t\"title\": \"Patterns of Enterprise Application Archtecture\",\n\t\t\t\"author\": \"Martin Fowler\",\n\t\t\t\"year\": \"2002\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"title\": \"Head First Deseign Patterns\",\n\t\t\t\"author\": \"Elisabeth Freeman\",\n\t\t\t\"year\": \"2004\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"title\": \"Internet & World Wide Web: How to Program\",\n\t\t\t\"author\": \"Deitel & Deitel\",\n\t\t\t\"year\": \"2007\"\n\t\t}\n\t],\n\t\"sort\": [\n\t\t{\n\t\t\t\"rule\": \"author\",\n\t\t\t\"direction\": \"ASC\"\n\t\t}\n\t]\n}"
 				},
 				"description": ""
 			},

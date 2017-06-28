@@ -9,12 +9,26 @@ app.use(bodyParser.json());
 var port = process.env.PORT || config.port; 
 var basePath = '/books';
 
-function sortByKey(array, key) {
-    return array.sort(function(a, b) {
-        var x = a[key].toLowerCase();
-        var y = b[key].toLowerCase();
-        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-    });
+function compare(a, b, sortList) {
+	for(var i = 0; i < sortList.length;i++){
+		var sort = sortList[i];
+		
+		if(sort.direction == 'ASC') {
+			if(a[sort.rule] < b[sort.rule]) {
+				return -1;
+			} else if (a[sort.rule] > b[sort.rule]) {
+				return 1;
+			}
+		} else if(sortList[i].direction == 'DESC') {
+			if(a[sort.rule] > b[sort.rule]) {
+				return -1;
+			} else if (a[sort.rule] < b[sort.rule]) {
+				return 1;
+			}
+		}	
+
+		return 0;
+	}
 }
 
 app.post(basePath, function(req, res) {
@@ -24,13 +38,9 @@ app.post(basePath, function(req, res) {
 		res.status(200).send([]);
 	}
 
-	var books = req.body.books;
-	for(var i = 0; i < req.body.sort.length;i++){
-	    books = sortByKey(books, req.body.sort[i].rule);
-	    if(req.body.sort[i].direction=='DESC'){
-	    	books.reverse();
-	    }
-	}
+	var books = req.body.books.sort(function(a, b) {
+		return compare(a,b, req.body.sort);
+	});
 
 	res.status(200).send(books);
 });

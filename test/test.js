@@ -9,36 +9,36 @@ var server = supertest.agent("http://localhost:8888");
 
 describe("SORT SERVICE TEST",function(){
 
-	var json = { 
-		"books":[
-			{
-				"id": 1,
-				"title": "Java How to Program",
-				"author": "Deitel & Deitel",
-				"year": "2007"
-			},
-			{
-				"id": 2,
-				"title": "Patterns of Enterprise Application Archtecture",
-				"author": "Martin Fowler",
-				"year": "2002"
-			},
-			{
-				"id": 3,
-				"title": "Head First Deseign Patterns",
-				"author": "Elisabeth Freeman",
-				"year": "2004"
-			},
-			{
-				"id": 4,
-				"title": "Internet & World Wide Web: How to Program",
-				"author": "Deitel & Deitel",
-				"year": "2007"
-			}
-		]
-	}
-
 	it("should SortingServiceException",function(done){
+		var json = { 
+			"books":[
+				{
+					"id": 1,
+					"title": "Java How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				},
+				{
+					"id": 2,
+					"title": "Patterns of Enterprise Application Archtecture",
+					"author": "Martin Fowler",
+					"year": "2002"
+				},
+				{
+					"id": 3,
+					"title": "Head First Deseign Patterns",
+					"author": "Elisabeth Freeman",
+					"year": "2004"
+				},
+				{
+					"id": 4,
+					"title": "Internet & World Wide Web: How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				}
+			]
+		}
+
 		server.post("/books")
 		.send(json)
 		.expect("Content-type",/text/)
@@ -50,6 +50,34 @@ describe("SORT SERVICE TEST",function(){
 	});
 
 	it("service is ON",function(done){
+		var json = { 
+			"books":[
+				{
+					"id": 1,
+					"title": "Java How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				},
+				{
+					"id": 2,
+					"title": "Patterns of Enterprise Application Archtecture",
+					"author": "Martin Fowler",
+					"year": "2002"
+				},
+				{
+					"id": 3,
+					"title": "Head First Deseign Patterns",
+					"author": "Elisabeth Freeman",
+					"year": "2004"
+				},
+				{
+					"id": 4,
+					"title": "Internet & World Wide Web: How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				}
+			]
+		}		
 		json.sort = [];
 
 		server.post("/books")
@@ -72,6 +100,34 @@ describe("SORT SERVICE TEST",function(){
 	});
 
 	it("title ASC",function(done){
+		var json = { 
+			"books":[
+				{
+					"id": 1,
+					"title": "Java How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				},
+				{
+					"id": 2,
+					"title": "Patterns of Enterprise Application Archtecture",
+					"author": "Martin Fowler",
+					"year": "2002"
+				},
+				{
+					"id": 3,
+					"title": "Head First Deseign Patterns",
+					"author": "Elisabeth Freeman",
+					"year": "2004"
+				},
+				{
+					"id": 4,
+					"title": "Internet & World Wide Web: How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				}
+			]
+		}		
 		json.sort = [{"rule": "title", "direction": "ASC"}];
 
 		server.post("/books")
@@ -91,6 +147,34 @@ describe("SORT SERVICE TEST",function(){
 	});
 
 	it("title DESC",function(done){
+		var json = { 
+			"books":[
+				{
+					"id": 1,
+					"title": "Java How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				},
+				{
+					"id": 2,
+					"title": "Patterns of Enterprise Application Archtecture",
+					"author": "Martin Fowler",
+					"year": "2002"
+				},
+				{
+					"id": 3,
+					"title": "Head First Deseign Patterns",
+					"author": "Elisabeth Freeman",
+					"year": "2004"
+				},
+				{
+					"id": 4,
+					"title": "Internet & World Wide Web: How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				}
+			]
+		}		
 		json.sort = [{"rule": "title", "direction": "DESC"}];
 
 		server.post("/books")
@@ -110,6 +194,34 @@ describe("SORT SERVICE TEST",function(){
 	});
 
 	it("year ASC",function(done){
+		var json = { 
+			"books":[
+				{
+					"id": 1,
+					"title": "Java How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				},
+				{
+					"id": 2,
+					"title": "Patterns of Enterprise Application Archtecture",
+					"author": "Martin Fowler",
+					"year": "2002"
+				},
+				{
+					"id": 3,
+					"title": "Head First Deseign Patterns",
+					"author": "Elisabeth Freeman",
+					"year": "2004"
+				},
+				{
+					"id": 4,
+					"title": "Internet & World Wide Web: How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				}
+			]
+		}		
 		json.sort = [{"rule": "year", "direction": "ASC"}];
 
 		server.post("/books")
@@ -129,6 +241,34 @@ describe("SORT SERVICE TEST",function(){
 	});
 
 	it("year DESC",function(done){
+		var json = { 
+			"books":[
+				{
+					"id": 1,
+					"title": "Java How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				},
+				{
+					"id": 2,
+					"title": "Patterns of Enterprise Application Archtecture",
+					"author": "Martin Fowler",
+					"year": "2002"
+				},
+				{
+					"id": 3,
+					"title": "Head First Deseign Patterns",
+					"author": "Elisabeth Freeman",
+					"year": "2004"
+				},
+				{
+					"id": 4,
+					"title": "Internet & World Wide Web: How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				}
+			]
+		}		
 		json.sort = [{"rule": "year", "direction": "DESC"}];
 
 		server.post("/books")
@@ -136,7 +276,7 @@ describe("SORT SERVICE TEST",function(){
 		.expect("Content-type",/json/)
 		.expect(200)
 		.end(function(err,res){
-			var order = '', orderOK = '4-1-3-2-';
+			var order = '', orderOK = '1-4-3-2-';
 
 			for (var i = 0; i < res.body.length; i++){
 			  order += res.body[i].id+'-';
@@ -147,8 +287,45 @@ describe("SORT SERVICE TEST",function(){
 		});
 	});
 
-	it("author ASC",function(done){
-		json.sort = [{"rule": "author", "direction": "ASC"}];
+	it("author ASC, title DESC",function(done){
+		var json = { 
+			"books":[
+				{
+					"id": 1,
+					"title": "Java How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				},
+				{
+					"id": 2,
+					"title": "Patterns of Enterprise Application Archtecture",
+					"author": "Martin Fowler",
+					"year": "2002"
+				},
+				{
+					"id": 3,
+					"title": "Head First Deseign Patterns",
+					"author": "Elisabeth Freeman",
+					"year": "2004"
+				},
+				{
+					"id": 4,
+					"title": "Internet & World Wide Web: How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				}
+			]
+		}		
+		json.sort = [
+			{
+				"rule": "author",
+				"direction": "ASC"
+			},
+			{
+				"rule": "title",
+				"direction": "DESC"
+			}
+		];
 
 		server.post("/books")
 		.send(json)
@@ -167,6 +344,34 @@ describe("SORT SERVICE TEST",function(){
 	});
 
 	it("author DESC",function(done){
+		var json = { 
+			"books": [
+				{
+					"id": 1,
+					"title": "Java How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				},
+				{
+					"id": 2,
+					"title": "Patterns of Enterprise Application Archtecture",
+					"author": "Martin Fowler",
+					"year": "2002"
+				},
+				{
+					"id": 3,
+					"title": "Head First Deseign Patterns",
+					"author": "Elisabeth Freeman",
+					"year": "2004"
+				},
+				{
+					"id": 4,
+					"title": "Internet & World Wide Web: How to Program",
+					"author": "Deitel & Deitel",
+					"year": "2007"
+				}
+			]
+		}		
 		json.sort = [{"rule": "author", "direction": "DESC"}];
 
 		server.post("/books")
@@ -174,7 +379,7 @@ describe("SORT SERVICE TEST",function(){
 		.expect("Content-type",/json/)
 		.expect(200)
 		.end(function(err,res){
-			var order = '', orderOK = '2-3-4-1-';
+			var order = '', orderOK = '2-3-1-4-';
 
 			for (var i = 0; i < res.body.length; i++){
 			  order += res.body[i].id+'-';
